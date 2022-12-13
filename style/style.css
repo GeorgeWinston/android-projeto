@@ -1,0 +1,221 @@
+@charset "UTF-8";
+/*Importa uma fonte(letra) do Google fonts ou de outro site qualquer*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/*Importa uma fonte que esteja em uma pasta interna do projeto, no próprio computador*/
+@font-face {
+    font-family: 'android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+/* :root_Cria uma variável para usar as fontes e cores do projeto*/
+:root {
+--cor01:#c5ebd6;
+--cor02:#83e1ad;
+--cor03:#3ddc84;
+--cor04:#2fa866;
+--cor05:#1a5c37;
+--cor06:#063d1e;
+--fonte-padrao: arial,verdana,helvetica,sans-serif;
+--fonte-destaque: 'Bebas Neue', cursive;
+--fonte-android: 'android', cursive;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+/*Configurações do body_corpo*/
+body{
+    background-color: #c5ebd6;
+    font-family: var(--fonte-padrao); /*Chama a variável e utiliza a fonte especificada*/
+}
+/*Configurações gerais para os links externos*/
+a.externo::after{
+    content: '\1F517'; /*Coloca um sinal de link depois do link, representando que é um link externo*/
+}
+
+/*Configurações do header_cabeçalho*/
+header{
+    background-image: linear-gradient(to bottom, var(--cor03), var(--cor06));
+    min-height: 150px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+header > h1 {
+    color:white;
+    font-family:var(--fonte-destaque);
+    font-size: 3em;
+    font-weight: normal;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.363) ;
+}
+
+header > p{
+    font-family: var(--fonte-padrao);
+    font-size: 1.3em;
+    padding-right: 10px;
+    padding-left: 10px;
+    color: white;
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.363);
+}
+/*Configurações gerais do nav_links do menu*/
+nav{
+    background-color: var(--cor06);
+    padding: 10px;
+    box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.363);
+}
+
+nav > a{
+    color: var(--cor01);
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition-duration: .5s; /* O .5s significa cinco segundos*/
+}
+
+nav > a:hover{
+    background-color: var(--cor03);
+    color: var(--cor05);
+}
+/*Configurações gerais do Main_área dentro do corpo*/
+main{
+    /*Estas duas limhas deixam o conteúdo do site responsivo definindo as larguras de 300px para dispositivos pequenos e 1000px para dispositivos grandes e deixa as margens auto ajustadas de acordo com a tela*/
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.418);
+    /*Deixa as bordas esquerda e direita da parte de baixo do main arredondadas */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+main p{
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    font-size: 1em;
+    line-height: 2em;
+}
+
+main strong{
+    color: white;
+    font-weight: bold;
+    background-color: var(--cor05);
+    padding: 2px 6px;
+    border-radius: 10px 5px;
+}
+
+main img{
+    width: 100%; /* Deixa as imagens auto ajustadas para 100% do valor da tela*/
+}
+/* Centraliza uma imagem na tela*/
+main img.pequena{
+    max-width: 350px;
+    display: block;
+    margin: auto;
+}
+/*Configurações gerais do vídeo _ deixando ele responsivo*/
+div.video{
+    background-color: var(--cor06);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 59%;/*Retira as margens pretas que aparece quando o vídeo é executado*/
+    position: relative;
+}
+/*Altera as configurações do iframe*/
+div.video > iframe{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+main  h1{
+    color:var(--cor05);
+    font-family: var(--fonte-android);
+    font-weight: normal;
+    font-size: 1.8em;
+}
+
+main h2{
+    font-family:var(--fonte-android);
+    color: var(--cor04);
+    font-size: 1.3em;
+    font-weight: normal;
+    background-image: linear-gradient(to right, var(--cor03), transparent);
+    text-indent: 10px;
+}
+
+main a{
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor06);
+    background-color: var(--cor03);
+    padding: 6px 5px;
+}
+
+main a:hover{
+    text-decoration:underline;
+    color: var(--cor04);
+}
+/*Configurações gerais do aside*/
+aside{
+   background-color: var(--cor02);
+   padding: 10px;
+   border-radius: 10px; 
+   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.281); 
+}
+
+aside > h3{
+    background-color: var(--cor05);
+    color: white;
+    text-indent: 8px;
+    padding: 10px;
+    margin: -10px -10px 0px -10px;/*usando o sinal de menos faz com que as margens cresçam para fora _margin negativa_*/
+    border-radius: 10px 10px 0px 0px;
+}
+/*Configuarções da lista dentro do aside*/
+aside > ul{
+    list-style-type: '\2714\00A0\00A0';/*Transforma os marcadores da lista em um sinal de "V"* _ OBS: Este recurso NÃO é compatível com todos os navegadores _ Tem que usar a contra-barra antes do código do tick _ "\00A0 ou \0020 = espaço"  */
+    list-style-position: inside;/*Coloca os marcadores da lista para dentro do aside*/
+    columns: 2;/*Divide a lista em duas colunas*/
+}
+
+/*Configurações gerais do footer_rodapé*/
+footer{
+    background-color: var(--cor06);
+    color: whitesmoke;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 8px 5px;
+}
+
+footer a{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+footer a:hover{
+    text-decoration: underline;
+    background-color: var(--cor01);
+}
+
+/*OBS:
+ Forma para centazilar vídeos baixados do youtube e poder deixá-lo responsivo.
+ 1°_ Envelopá-lo dentro de uma div.
+ 2°_ torná-lo uma classe. (class="video")
+ 3°_ Criar no CSS uma configuração para a div vídeo (div.video) e uma para o iframe ( div.video > iframe).
+ 4°_ Na div video colocar (position: relativ) e na div iframe ( position: absolut). 
+  Quando se coloca o posicionamento absoluto pode-se mexer no top,left,width e height,ou seja, posicionamento superior, esquerdo, largura e altura do objeto.Podendo assim deixá-lo aonde você quiser.
+ 5°_ 
+*/
